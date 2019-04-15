@@ -1,4 +1,4 @@
-# hello-world-ts
+# todo-vue-ts
 
 ## Project setup
 ```
