@@ -1,4 +1,4 @@
-# todo-vue-ts
+# todo-vue-typescript
 
 ## Project setup
 ```
