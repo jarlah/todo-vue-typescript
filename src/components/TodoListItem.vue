@@ -1,10 +1,10 @@
 <template>
   <li>
-    <span @click="itemActions.completeTodo(todo.id)"
+    <span @click="completeTodoItem(todo.id)"
           v-bind:style="[todo.complete ? { textDecoration: 'line-through' } : {}]">
       {{ todo.text }}
     </span>
-    <button @click="itemActions.removeTodo(todo.id)">
+    <button @click="removeTodoItem(todo.id)">
       X
     </button>
   </li>
@@ -17,9 +17,9 @@ import todo, { Todo } from '@/shared/TodoModule';
 @Component
 export default class TodoListItem extends Vue {
   @Prop() todo!: Todo;
-  itemActions = {
-    completeTodo: todo.completeTodo,
-    removeTodo: todo.removeTodo,
-  };
+
+  completeTodoItem = todo.completeTodo;
+
+  removeTodoItem = todo.removeTodo;
 }
 </script>

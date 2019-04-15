@@ -24,7 +24,7 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 import TodoListItem from '@/components/TodoListItem.vue';
-import todo from '@/shared/TodoModule';
+import todo, {Todo} from '@/shared/TodoModule';
 
 @Component({
   components: {
@@ -32,20 +32,14 @@ import todo from '@/shared/TodoModule';
   },
 })
 export default class TodoList extends Vue {
-  get todoList() {
-    return todo.todos;
-  }
+  get todoList(): Todo[] { return todo.todos; };
 
   newTodoText: string = '';
 
   addNewTodo() {
     const trimmedText = this.newTodoText.trim();
     if (trimmedText) {
-      todo.addTodo({
-        id: -1,
-        text: trimmedText,
-        complete: false,
-      });
+      todo.addTodo(trimmedText);
       this.newTodoText = '';
     }
   }
