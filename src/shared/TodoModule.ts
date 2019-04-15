@@ -26,7 +26,7 @@ const getTodosGetter = builder.read(function getTodos(state: TodoState) {
 });
 
 function addTodo(state: TodoState, todo: Todo) {
-    state.todos.push({ ...todo, id: state.nextTodoId });
+    state.todos = [...state.todos, { ...todo, id: state.nextTodoId }];
     state.nextTodoId = state.nextTodoId + 1;
 }
 
