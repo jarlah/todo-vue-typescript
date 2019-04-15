@@ -1,7 +1,7 @@
 import {RootState} from '@/shared/store';
 import {getStoreBuilder} from 'vuex-typex';
 
-export const namespace = 'authentication';
+export const namespace = 'todo';
 
 export interface Todo {
     id: number;
